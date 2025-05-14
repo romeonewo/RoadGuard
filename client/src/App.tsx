@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import Home from './pages/home/Home';
 
 export default function App() {
   const [showFlash, setShowFlash] = useState(true);
@@ -21,11 +22,6 @@ export default function App() {
     );
   }
 
-  // Main App Content Placeholder
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <p className="text-xl text-gray-700">Welcome to RoadGuard! Your app content will load here.</p>
-    </div>
-  );
+  // Redirect to Home page after flash screen
+  return <Home />;
 }
-
