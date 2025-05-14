@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [showFlash, setShowFlash] = useState(true);
 
+  useEffect(() => {
+    const timer = setTimeout(() => setShowFlash(false), 3000); // 3-second flash screen
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Flash Screen
+  if (showFlash) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-gradient-to-br from-purple-600 via-pink-500 to-red-400">
+        <div className="text-center animate-pulse">
+          {/* Replace with your logo if available */}
+          <h1 className="text-7xl font-black text-white">RoadGuard</h1>
+        </div>
+      </div>
+    );
+  }
+
+  // Main App Content Placeholder
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <p className="text-xl text-gray-700">Welcome to RoadGuard! Your app content will load here.</p>
+    </div>
+  );
 }
 
-export default App
