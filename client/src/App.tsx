@@ -1,12 +1,7 @@
-// src/App.tsx
-import './App.css';
+import HomePage from './pages/HomePage';
 
 function App() {
-  return (
-    <div className="flash-container">
-      <h1 className="flash-title">RoadGuard</h1>
-    </div>
-  );
+  return <HomePage />;
 }
 
 export default App;
