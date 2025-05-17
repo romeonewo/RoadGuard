@@ -1,7 +1,8 @@
+// HomePage.js
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 
-const HomePage = () => {
+const HomePage = ({ navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
@@ -10,7 +11,7 @@ const HomePage = () => {
       </View>
 
       <View style={styles.navSection}>
-        <TouchableOpacity style={styles.card} onPress={() => { /* navigate or action */ }}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Report')}>
           <Text style={styles.emoji}>🚨</Text>
           <View>
             <Text style={styles.cardTitle}>Report</Text>
@@ -18,7 +19,7 @@ const HomePage = () => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card} onPress={() => { /* navigate or action */ }}>
+        <TouchableOpacity style={styles.card}>
           <Text style={styles.emoji}>🗺️</Text>
           <View>
             <Text style={styles.cardTitle}>Map</Text>
@@ -26,7 +27,7 @@ const HomePage = () => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card} onPress={() => { /* navigate or action */ }}>
+        <TouchableOpacity style={styles.card}>
           <Text style={styles.emoji}>📢</Text>
           <View>
             <Text style={styles.cardTitle}>Street Feed</Text>
